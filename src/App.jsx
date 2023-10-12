@@ -3,7 +3,7 @@ import { columns } from "./utils";
 
 function App() {
   return (
-    <div className="flex justify-center items-center mt-20">
+    <div className="flex justify-center items-center lg:mt-20 ">
       <Table columns={columns} />
     </div>
   );

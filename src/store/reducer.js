@@ -1,10 +1,18 @@
-import { tableData } from "../utils";
-import { APPROVED_PRODUCT, MISSING_PRODUCT, UPDATE_PRODUCT } from "./action";
+import {
+  ADD_TABLE_DATA,
+  APPROVED_PRODUCT,
+  MISSING_PRODUCT,
+  UPDATE_PRODUCT,
+} from "./action";
 
-const INITIAL_STATE = tableData;
-
-export const productReducer = (state = INITIAL_STATE, action) => {
+export const productReducer = (state = [], action) => {
   switch (action.type) {
+    case ADD_TABLE_DATA: {
+      const data = action.payload;
+
+      return data;
+    }
+
     case APPROVED_PRODUCT: {
       const { productId } = action.payload;
       const filteredData = state.map((product) =>

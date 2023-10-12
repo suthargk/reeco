@@ -26,7 +26,7 @@ export const columns = [
     renderCell: (row) => {
       return (
         <div>
-          <span>{row.price}</span>
+          <span>${row.price}</span>
           <span className="text-gray-500"> / 6 * 1LB</span>
         </div>
       );

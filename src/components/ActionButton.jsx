@@ -10,6 +10,8 @@ const ActionButton = ({
   handleApprovedProduct,
   handleEdit,
   handleMissingOverlay,
+  index,
+  rowsLength,
 }) => {
   return (
     <td className="p-3 text-gray-800 text-sm pl-4">
@@ -21,7 +23,13 @@ const ActionButton = ({
       >
         <OptionIcon className="text-gray-500" width={24} height={24} />
         {isOpen && (
-          <div className=" absolute top-5 w-max right-2 overflow-hidden bg-white z-20  shadow-lg  rounded-md border border-gray-200 divide-y">
+          <div
+            className={`absolute ${
+              index === rowsLength - 2 || index === rowsLength - 1
+                ? "bottom-0"
+                : "top-5"
+            } w-max right-2 overflow-hidden bg-white z-20  shadow-lg  rounded-md border border-gray-200 divide-y`}
+          >
             <button
               onClick={() => handleApprovedProduct(rowId)}
               className="w-full p-2 hover:bg-gray-100 duration-300 flex gap-2 items-center"

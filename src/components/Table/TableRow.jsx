@@ -10,7 +10,7 @@ import { createPortal } from "react-dom";
 import EditOverlay from "../EditOverlay";
 import MissingOverlay from "../MissingOverlay";
 
-const TableRow = ({ row, columns, dispatch }) => {
+const TableRow = ({ row, columns, dispatch, index, rowsLength }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isEdit, setIsEdit] = useState(false);
   const [isMissingOverlayOpen, setIsMissingOverlayOpen] = useState(false);
@@ -69,6 +69,8 @@ const TableRow = ({ row, columns, dispatch }) => {
       <ActionButton
         isOpen={isOpen}
         rowId={row.id}
+        index={index}
+        rowsLength={rowsLength}
         handleActionButtonOverlayOption={handleActionButtonOverlayOption}
         handleApprovedProduct={handleApprovedProduct}
         handleEdit={handleEdit}
